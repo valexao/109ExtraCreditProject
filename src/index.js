@@ -3,13 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import HowItWorks from './HowItWorks.js';
+import MyBooks from './MyBooks.js';
+import Matching from './Matching.js';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render((
+  <BrowserRouter>
+      <main>
+          <Switch>
+              <Route path="/" component={App} exact />
+              <Route path="/HowItWorks" component={HowItWorks} />
+              <Route path="/MyBookMatches" component={MyBooks} />
+              <Route path="/Matching" component={Matching} />
+          </Switch>
+      </main>
+  </BrowserRouter> 
+), document.getElementById('root'))
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
