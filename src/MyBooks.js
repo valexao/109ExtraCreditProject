@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles';
 import { blue } from '@material-ui/core/colors';
-import headerlogo from './headerlogo.png';
+import headerlogo from './header1.png';
 import { Link } from 'react-router-dom';
 
 
@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    fontFamily: 'Optima',
   },
   headimages: {
     width: "700px",
@@ -31,13 +32,18 @@ function App() {
       <header className="App-header">
       <img src={headerlogo} className={classes.headimages} alt="Logo: The Book Matcher" />
       <Grid container spacing={3}>
-        <Grid item xs={6}>
+        <Grid item xs={4}>
           <Paper className={classes.paper}>
           <Link to="/HowItWorks">
-          How it Works
+          About TBM
           </Link></Paper>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={4}>
+          <Paper className={classes.paper}>
+          <Link to='/HowItWorks'> How TBM Works
+          </Link></Paper>
+        </Grid>
+        <Grid item xs={4}>
           <Paper className={classes.paper}>
           <Link to='/MyBookMatches'> My Books
           </Link></Paper>
