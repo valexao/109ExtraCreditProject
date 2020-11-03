@@ -14,25 +14,26 @@
 }
 
 .App-header {
-  background-color: darksalmon;
+  background-color: black;
   padding: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  font: 'TimesNewRoman';
   color: white;
 }
 
 .App-body {
-  background-color: #282c34;
+  background-color: blanchedalmond;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #282c34;
 }
 
 .App-link {
