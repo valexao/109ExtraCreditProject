@@ -8,6 +8,7 @@ import headerlogo from './header1.png';
 import { Link } from 'react-router-dom';
 import {TextField, Radio, RadioGroup, FormControl, FormControlLabel, FormLabel}from '@material-ui/core';
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,27 +22,33 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    fontFamily: 'Optima',
+    //fontFamily: 'Optima',
   },
   headimages: {
     width: "700px",
     height: "250px",
-  }
+  },
 }));
 
 function App() {
   const classes = useStyles();
 
-  const [value, setValue] = React.useState('female');
+  const [value, setValue] = React.useState('black');
+
+  const [genrevalue, setGenreValue] = React.useState('romance');
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setValue(event.target.genrevalue);
+  };
+
+  const handleGenreChange = (event) => {
+    setGenreValue(event.target.genrevalue);
   };
 
   return (
     <div className="App">
       <header className="App-header">
-      <img src={headerlogo} className={classes.headimages} alt="Logo: The Book Matcher" />
+      <img src={headerlogo} className={classes.headimages} alt="Logo: The Book Matcher"/>
       <Grid container spacing={3}>
         <Grid item xs={4}>
           <Paper className={classes.paper}>
@@ -63,23 +70,23 @@ function App() {
       </header>
 
       <body className="App-body">
+          <br />
+          Please enter some basic information so we can get started!
+          <br />
       <form className={classes.root} noValidate autoComplete="off">
-        <TextField id="outlined-basic" label="First Name" variant="outlined" />
-        <TextField id="outlined-basic" label="Last Name" variant="outlined" />
+        <TextField id="outlined-basic" label="Enter your name" variant="outlined" />
     <br />
     <br />
     <FormControl component="fieldset">
-      <FormLabel component="legend">What is your gender?</FormLabel>
-      <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
-        <FormControlLabel value="female" control={<Radio />} label="Woman" />
-        <FormControlLabel value="male" control={<Radio />} label="Man" />
-        <FormControlLabel value="other" control={<Radio />} label="Nonbinary/GNC" />
+      <FormLabel component="legend">What is your favorite book genre?</FormLabel>
+      <RadioGroup aria-label="genre" name="genre" value={genrevalue} onChange={handleGenreChange}>
+        <FormControlLabel value="romance" control={<Radio />} label="Romance" />
+        <FormControlLabel value="nonfiction" control={<Radio />} label="Nonfiction" />
+        <FormControlLabel value="fiction" control={<Radio />} label="Fiction" />
         <FormControlLabel value="disabled" control={<Radio />} label="Other" />
       </RadioGroup>
     </FormControl>
     </form>
-    <br />
-    <br />
     <form className={classes.root} noValidate autoComplete="off">
     <FormControl component="fieldset">
       <FormLabel component="legend">What is your race?</FormLabel>
@@ -92,6 +99,12 @@ function App() {
       </RadioGroup>
     </FormControl>
     </form>
+
+    <Button variant="contained" color="primary" href="/Matching.js">
+        See my matches
+      </Button>
+      <br />
+    <br />
       </body>
     </div>
   );

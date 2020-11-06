@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    fontFamily: 'Optima',
+    //fontFamily: 'Optima',
   },
   headimages: {
     width: "700px",
