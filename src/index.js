@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HowItWorks from './HowItWorks.js';
 import MyBooks from './MyBooks.js';
 import Matching from './Matching.js';
+import Matches from './Matches.js';
 
 ReactDOM.render((
   <BrowserRouter>
@@ -16,6 +17,7 @@ ReactDOM.render((
               <Route path="/HowItWorks" component={HowItWorks} />
               <Route path="/MyBookMatches" component={MyBooks} />
               <Route path="/Matching" component={Matching} />
+              <Route path="/Matches" component={Matches} />
           </Switch>
       </main>
   </BrowserRouter> 
